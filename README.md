@@ -12,6 +12,8 @@ Aesthetic Lens is an AI-powered tool that evaluates the aesthetic quality of ima
 - Administrative interface for managing example images
 - Utility scripts for batch processing and organizing images
 
+![Results Page](screenshot_results_portrait.png)
+
 ## Understanding Aesthetic Scores
 
 The NIMA model evaluates images on a scale from 1 to 10, with higher scores indicating better aesthetic quality:
@@ -76,7 +78,7 @@ aesthetic-lens/
    cd Aesthetic-Lens---AI_Powered_Image_Aesthetic_Scoring_Tool
    ```
 
-2. Create and activate a Conda environment:
+2. Create and activate the Conda environment:
    ```
    conda env create -f environment.yml
    conda activate aesthetic-lens
@@ -88,6 +90,34 @@ aesthetic-lens/
    ```
 
 4. Open your browser and navigate to `http://localhost:5000`
+
+### Using pip (Alternative)
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/CodeQueenie/Aesthetic-Lens---AI_Powered_Image_Aesthetic_Scoring_Tool.git
+   cd Aesthetic-Lens---AI_Powered_Image_Aesthetic_Scoring_Tool
+   ```
+
+2. Create a virtual environment (optional but recommended):
+   ```
+   python -m venv venv
+   .\venv\Scripts\activate  # On Windows
+   ```
+
+3. Install the required packages:
+   ```
+   pip install -r requirements.txt
+   ```
+
+4. Run the application:
+   ```
+   python app.py
+   ```
+
+5. Open your browser and navigate to `http://localhost:5000`
+
+Note: The Conda method is recommended as it handles all dependencies, including TensorFlow and its GPU support, more reliably than pip.
 
 ## Usage
 
