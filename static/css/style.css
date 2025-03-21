@@ -1,0 +1,487 @@
+/* 
+ * Aesthetic Lens - Custom CSS Styles
+ * This file contains custom styles for the Aesthetic Lens application.
+ */
+
+:root {
+    --primary-color: #4a6baf;
+    --secondary-color: #6c757d;
+    --accent-color: #ffc107;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --border-radius: 0.5rem;
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header h1 {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+header p.lead {
+    color: var(--secondary-color);
+}
+
+/* Card Styles */
+.card {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-title {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Upload Area Styles */
+.upload-area {
+    border: 2px dashed var(--primary-color);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.upload-area:hover {
+    background-color: rgba(var(--primary-rgb), 0.05);
+}
+
+.upload-area.dragover {
+    background-color: rgba(var(--primary-rgb), 0.1);
+    border-color: var(--primary-color-dark);
+}
+
+.file-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-selected .upload-area {
+    background-color: rgba(var(--primary-rgb), 0.1);
+    border-style: solid;
+}
+
+.upload-area i {
+    color: var(--primary-color);
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #3a559a;
+    border-color: #3a559a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Score Display Styles */
+.score-container {
+    padding: 1.5rem;
+}
+
+.score-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.score-value {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.score-max {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.score-bar .progress {
+    height: 10px;
+    border-radius: 5px;
+    background-color: #e9ecef;
+}
+
+.score-bar .progress-bar {
+    background-color: var(--primary-color);
+    border-radius: 5px;
+}
+
+/* Score width classes for progress bar */
+.score-width-1 { width: 10%; }
+.score-width-2 { width: 20%; }
+.score-width-3 { width: 30%; }
+.score-width-4 { width: 40%; }
+.score-width-5 { width: 50%; }
+.score-width-6 { width: 60%; }
+.score-width-7 { width: 70%; }
+.score-width-8 { width: 80%; }
+.score-width-9 { width: 90%; }
+.score-width-10 { width: 100%; }
+
+/* Feedback Styles */
+.feedback-container {
+    margin-top: 1.5rem;
+}
+
+.feedback-text {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+/* Image Container Styles */
+.image-container {
+    text-align: center;
+}
+
+.image-container img {
+    max-height: 400px;
+    width: auto;
+    max-width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Score Explanation Styles */
+.score-explanation {
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    background-color: #f8f9fa;
+    height: 100%;
+}
+
+.score-explanation h5 {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Footer Styles */
+footer {
+    color: var(--secondary-color);
+}
+
+footer a {
+    color: var(--primary-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .score-circle {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .score-value {
+        font-size: 2.5rem;
+    }
+    
+    .score-max {
+        font-size: 1rem;
+    }
+    
+    .feedback-text {
+        font-size: 1rem;
+    }
+}
+
+/* Animation for file upload */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.file-selected .upload-area {
+    border-color: var(--success-color);
+    background-color: rgba(40, 167, 69, 0.05);
+    animation: pulse 1s ease-in-out;
+}
+
+.file-selected .upload-area i {
+    color: var(--success-color);
+}
+
+/* Loading indicator */
+.loading-indicator {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+}
+
+.loading-indicator .spinner-border {
+    width: 3rem;
+    height: 3rem;
+    color: var(--primary-color);
+}
+
+.loading-text {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+/* AI Analysis Visualization */
+.image-analysis-container {
+    margin-bottom: 2rem;
+    border: 1px solid #dee2e6;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    position: relative;
+}
+
+.analysis-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Rule of thirds grid */
+.rule-thirds-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(to right, rgba(255,255,255,0.3) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.3) 1px, transparent 1px);
+    background-size: 33.33% 33.33%;
+    background-position: 33.33% 33.33%, 66.66% 66.66%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-analysis-container:hover .rule-thirds-grid {
+    opacity: 0.6;
+}
+
+/* Focus points */
+.focus-point {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    background-color: rgba(74, 107, 175, 0.7);
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.3);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.focus-point.secondary {
+    width: 18px;
+    height: 18px;
+    background-color: rgba(108, 117, 125, 0.7);
+}
+
+.image-analysis-container:hover .focus-point {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+/* Color analysis */
+.color-analysis {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.color-swatch {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.5);
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+}
+
+.image-analysis-container:hover .color-analysis {
+    opacity: 1;
+}
+
+/* Metrics */
+.analysis-metrics {
+    margin-top: 1.5rem;
+}
+
+.metric-item {
+    margin-bottom: 1rem;
+}
+
+.metric-item h6 {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.metric-bar-container {
+    height: 6px;
+    background-color: #e9ecef;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.metric-bar {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+    animation: metricFill 1.2s ease-out forwards;
+}
+
+@keyframes metricFill {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Metric Bar Width Classes */
+.metric-width-0 { width: 0%; }
+.metric-width-5 { width: 5%; }
+.metric-width-10 { width: 10%; }
+.metric-width-15 { width: 15%; }
+.metric-width-20 { width: 20%; }
+.metric-width-25 { width: 25%; }
+.metric-width-30 { width: 30%; }
+.metric-width-35 { width: 35%; }
+.metric-width-40 { width: 40%; }
+.metric-width-45 { width: 45%; }
+.metric-width-50 { width: 50%; }
+.metric-width-55 { width: 55%; }
+.metric-width-60 { width: 60%; }
+.metric-width-65 { width: 65%; }
+.metric-width-70 { width: 70%; }
+.metric-width-75 { width: 75%; }
+.metric-width-80 { width: 80%; }
+.metric-width-85 { width: 85%; }
+.metric-width-90 { width: 90%; }
+.metric-width-95 { width: 95%; }
+.metric-width-100 { width: 100%; }
+
+/* Loading Overlay */
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: opacity 0.3s ease;
+}
+
+.loading-spinner {
+    text-align: center;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    background-color: white;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.loading-spinner .spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+.loading-spinner p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* Example Images Page */
+.example-image-card {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.example-image-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.example-image-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.score-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.example-image-card p {
+    font-size: 0.85rem;
+    margin-bottom: 0;
+}
